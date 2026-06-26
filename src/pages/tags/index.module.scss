@@ -1,0 +1,197 @@
+@use '../../styles/theme.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.tagsPage {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.header {
+  background: $color-bg-card;
+  padding: $spacing-lg $page-padding;
+  border-bottom: 1rpx solid $color-border;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.title {
+  font-size: $font-size-title;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.selectedCount {
+  font-size: $font-size-body;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  background: $color-bg-input;
+  border-radius: $radius-lg;
+  padding: $spacing-sm $spacing-md;
+  margin-bottom: $spacing-md;
+}
+
+.searchIcon {
+  font-size: $font-size-subtitle;
+  margin-right: $spacing-sm;
+}
+
+.searchInput {
+  flex: 1;
+  font-size: $font-size-body;
+  background: transparent;
+}
+
+.selectedTagsSection {
+  margin-bottom: $spacing-md;
+}
+
+.sectionTitle {
+  font-size: $font-size-subtitle;
+  font-weight: $font-weight-medium;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-sm;
+}
+
+.selectedTagsContainer {
+  @include scroll-x-container;
+  min-height: 80rpx;
+}
+
+.selectedTagsList {
+  display: inline-flex;
+  gap: $spacing-sm;
+  padding: $spacing-xs 0;
+}
+
+.clearButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56rpx;
+  padding: 0 $spacing-lg;
+  border-radius: $radius-button;
+  background: $color-bg-hover;
+  color: $color-text-secondary;
+  font-size: $font-size-caption;
+  border: none;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+.allTagsSection {
+  padding: $spacing-lg $page-padding;
+}
+
+.categoryTitle {
+  font-size: $font-size-subtitle;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  margin-top: $spacing-xl;
+  
+  &:first-child {
+    margin-top: 0;
+  }
+}
+
+.categorySection {
+  margin-bottom: $spacing-lg;
+}
+
+.tagsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-sm;
+}
+
+.tagsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-md;
+}
+
+.allTagsGridSection {
+  margin-top: $spacing-xl;
+}
+
+.tagCard {
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 160rpx;
+  border: 2rpx solid transparent;
+  transition: all $transition-base;
+  position: relative;
+
+  &:active {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+
+  &.selected {
+    border-color: $color-primary;
+    background: rgba(99, 102, 241, 0.05);
+  }
+}
+
+.tagName {
+  font-size: $font-size-body;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  margin-bottom: $spacing-xs;
+  text-align: center;
+}
+
+.tagCount {
+  font-size: $font-size-small;
+  color: $color-text-tertiary;
+}
+
+.selectedBadge {
+  position: absolute;
+  top: $spacing-xs;
+  right: $spacing-xs;
+  width: 32rpx;
+  height: 32rpx;
+  border-radius: 50%;
+  background: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.badgeIcon {
+  font-size: $font-size-small;
+  color: $color-white;
+}
+
+.searchResults {
+  margin-bottom: $spacing-xl;
+}
+
+.emptyHint {
+  text-align: center;
+  padding: $spacing-xl * 2;
+  color: $color-text-tertiary;
+  font-size: $font-size-body;
+}

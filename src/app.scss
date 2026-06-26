@@ -1,0 +1,9 @@
+@use './styles/theme.scss' as *;
+@use './styles/variables.scss' as *;
+
+page {
+  background-color: $color-bg-page;
+  font-size: $font-size-body;
+  color: $color-text-primary;
+  line-height: 1.6;
+}

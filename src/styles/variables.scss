@@ -1,0 +1,124 @@
+// 全局 SCSS 变量和 Mixin
+// 基于 8px 网格系统和主流小程序设计规范
+
+// ==================== 间距系统（8px网格） ====================
+$spacing-xs: 8rpx;
+$spacing-sm: 16rpx;
+$spacing-md: 24rpx;
+$spacing-lg: 32rpx;
+$spacing-xl: 48rpx;
+$spacing-2xl: 64rpx;
+
+// 页面左右边距
+$page-padding: 32rpx;
+// 最大内容宽度
+$max-content-width: 686rpx;
+
+// ==================== 圆角设计 ====================
+$radius-xs: 4rpx;
+$radius-sm: 8rpx;
+$radius-md: 12rpx;
+$radius-lg: 16rpx;
+$radius-button: 48rpx; // 全圆角胶囊形状
+$radius-round: 999rpx; // 完全圆形
+
+// ==================== 阴影设计 ====================
+$shadow-card: 0 2rpx 12rpx rgba(0, 0, 0, 0.08);
+$shadow-float: 0 4rpx 16rpx rgba(0, 0, 0, 0.1);
+$shadow-card-hover: 0 4rpx 20rpx rgba(0, 0, 0, 0.12);
+$shadow-popup: 0 8rpx 32rpx rgba(0, 0, 0, 0.15);
+
+// ==================== 字体层级 ====================
+$font-size-large-title: 40rpx;
+$font-size-title: 34rpx;
+$font-size-subtitle: 30rpx;
+$font-size-body: 28rpx;
+$font-size-caption: 24rpx;
+$font-size-small: 22rpx;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+
+// ==================== 按钮尺寸 ====================
+$button-height-sm: 64rpx;
+$button-height-md: 80rpx;
+$button-height-lg: 96rpx;
+
+// ==================== 过渡动画 ====================
+$transition-base: 0.3s ease;
+$transition-fast: 0.15s ease;
+
+// ==================== Mixin ====================
+
+// 文本单行截断
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 文本多行截断
+@mixin text-ellipsis-multi($lines: 2) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 按钮样式重置
+@mixin button-reset {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: center;
+  outline: none;
+  &::after {
+    border: none;
+  }
+}
+
+// 横向滚动容器
+@mixin scroll-x-container {
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// 横向滚动子项
+@mixin scroll-x-item($width: 260rpx) {
+  display: inline-flex;
+  flex-direction: column;
+  width: $width;
+  flex-shrink: 0;
+  white-space: normal;
+}
+
+
+
+// 安全区域适配
+@mixin safe-area-bottom {
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+// 居中布局
+@mixin center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// 垂直居中
+@mixin vertical-center {
+  display: flex;
+  align-items: center;
+}

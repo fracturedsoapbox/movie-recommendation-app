@@ -1,0 +1,90 @@
+@use '../../styles/theme.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.movieCard {
+  @include card-base;
+  display: flex;
+  padding: $spacing-md;
+  margin-bottom: $spacing-md;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.9;
+    transform: scale(0.98);
+  }
+}
+
+.posterContainer {
+  position: relative;
+  flex-shrink: 0;
+  margin-right: $spacing-md;
+}
+
+.poster {
+  width: 200rpx;
+  height: 280rpx;
+  border-radius: $radius-md;
+  background-color: $color-bg-hover;
+}
+
+.ratingBadge {
+  position: absolute;
+  top: $spacing-sm;
+  right: $spacing-sm;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: $radius-sm;
+  padding: 4rpx $spacing-sm;
+  backdrop-filter: blur(8rpx);
+}
+
+.ratingText {
+  color: $color-rating;
+  font-size: $font-size-caption;
+  font-weight: $font-weight-semibold;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+}
+
+.title {
+  font-size: $font-size-title;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  @include text-ellipsis;
+  margin-bottom: $spacing-sm;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  margin-bottom: $spacing-sm;
+}
+
+.year,
+.duration {
+  font-size: $font-size-caption;
+  color: $color-text-tertiary;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+.tag {
+  background-color: $color-tag-bg;
+  border-radius: $radius-xs;
+  padding: 4rpx $spacing-sm;
+}
+
+.tagText {
+  font-size: $font-size-small;
+  color: $color-tag-text;
+}

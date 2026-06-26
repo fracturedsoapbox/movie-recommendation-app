@@ -1,0 +1,37 @@
+@use '../../styles/theme.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.reviewCard {
+  @include card-base;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.reviewContent {
+  margin-bottom: $spacing-sm;
+}
+
+.reviewText {
+  font-size: $font-size-body;
+  color: $color-text-primary;
+  line-height: 1.8;
+}
+
+.reviewMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: $spacing-sm;
+  border-top: 1rpx solid $color-border-light;
+}
+
+.author {
+  font-size: $font-size-caption;
+  color: $color-text-secondary;
+  font-weight: $font-weight-medium;
+}
+
+.time {
+  font-size: $font-size-small;
+  color: $color-text-tertiary;
+}

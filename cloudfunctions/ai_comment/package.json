@@ -1,0 +1,20 @@
+{
+  "name": "ai_comment",
+  "version": "1.0.0",
+  "description": "基于标签匹配的高分影视推荐+AI趣味影评小程序 - AI影评生成云函数",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wechat",
+    "cloudbase",
+    "ai",
+    "movie-review"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "wx-server-sdk": "^2.6.3"
+  }
+}

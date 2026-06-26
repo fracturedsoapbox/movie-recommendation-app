@@ -1,0 +1,58 @@
+@use '../../styles/theme.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.ratingStar {
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+
+  &.small {
+    .ratingText {
+      font-size: $font-size-caption;
+    }
+    .stars {
+      font-size: $font-size-small;
+    }
+  }
+
+  &.medium {
+    .ratingText {
+      font-size: $font-size-body;
+    }
+    .stars {
+      font-size: $font-size-caption;
+    }
+  }
+
+  &.large {
+    .ratingText {
+      font-size: $font-size-title;
+    }
+    .stars {
+      font-size: $font-size-body;
+    }
+  }
+}
+
+.ratingText {
+  font-weight: $font-weight-semibold;
+  color: $color-rating;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+}
+
+.starFull {
+  color: $color-rating;
+}
+
+.starHalf {
+  color: $color-rating;
+  opacity: 0.7;
+}
+
+.starEmpty {
+  color: $color-border;
+}

@@ -1,0 +1,47 @@
+// 主题配色变量
+// 基于第二阶段设计的配色方案
+
+// 品牌主题色
+$color-primary: #6366f1; // 现代紫色，代表科技与创意
+$color-primary-light: #8b5cf6; // 浅紫色，用于渐变和强调
+$color-primary-dark: #4f46e5; // 深紫色，用于hover状态
+
+// 功能色
+$color-success: #00b42a;
+$color-warning: #ff7d00;
+$color-error: #f53f3f;
+$color-info: #165dff;
+
+// 背景色
+$color-bg-page: #f8fafc; // 页面背景（浅灰蓝）
+$color-bg-card: #ffffff; // 卡片背景（纯白）
+$color-bg-hover: #f1f5f9; // 悬停背景
+$color-bg-input: #f8fafc; // 输入框背景
+$color-white: #ffffff; // 白色
+
+// 文本色
+$color-text-primary: #1e293b; // 主要文本（深灰蓝）
+$color-text-secondary: #64748b; // 次要文本（中灰）
+$color-text-tertiary: #94a3b8; // 辅助文本（浅灰）
+$color-text-disabled: #c9cdd4; // 禁用文本
+
+// 边框色
+$color-border: #e2e8f0; // 浅灰边框
+$color-border-light: #f1f5f9; // 浅色边框
+
+// 业务相关颜色
+$color-rating: #f59e0b; // 金色，用于评分显示
+$color-tag-bg: #e0e7ff; // 浅紫，用于标签背景
+$color-tag-text: #4f46e5; // 深紫，用于标签文字
+
+// 渐变色
+$gradient-primary: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+$gradient-bg: linear-gradient(180deg, #f0f5ff 0%, $color-bg-page 100%);
+
+// 卡片基础样式（依赖主题色，放在theme中）
+@mixin card-base {
+  background: $color-bg-card;
+  border-radius: 16rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}

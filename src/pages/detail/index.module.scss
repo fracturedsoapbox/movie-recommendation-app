@@ -1,0 +1,414 @@
+@use '../../styles/theme.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.detailPage {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.posterSection {
+  position: relative;
+  height: 500rpx;
+  overflow: hidden;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+}
+
+.posterOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 300rpx;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: $spacing-xl $page-padding;
+}
+
+.backButton {
+  position: absolute;
+  top: calc($spacing-lg + constant(safe-area-inset-top));
+  top: calc($spacing-lg + env(safe-area-inset-top));
+  left: $page-padding;
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #ffffff;
+  backdrop-filter: blur(8rpx);
+  z-index: 10;
+}
+
+.movieInfo {
+  color: #ffffff;
+}
+
+.title {
+  font-size: 40rpx;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-sm;
+  @include text-ellipsis;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+  margin-bottom: $spacing-md;
+}
+
+.rating {
+  font-size: 36rpx;
+  font-weight: $font-weight-semibold;
+  color: $color-rating;
+}
+
+.year,
+.duration {
+  font-size: $font-size-caption;
+  opacity: 0.9;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-xs;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: $radius-xs;
+  padding: 4rpx $spacing-sm;
+  backdrop-filter: blur(8rpx);
+}
+
+.tagText {
+  font-size: $font-size-small;
+  color: #ffffff;
+}
+
+.contentSection {
+  padding: $spacing-lg $page-padding;
+}
+
+.section {
+  margin-bottom: $spacing-xl;
+}
+
+.sectionTitle {
+  font-size: $font-size-subtitle;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+}
+
+.sectionIcon {
+  font-size: 28rpx;
+}
+
+.infoRow {
+  display: flex;
+  margin-bottom: $spacing-sm;
+}
+
+.infoLabel {
+  width: 120rpx;
+  font-size: $font-size-body;
+  color: $color-text-secondary;
+  flex-shrink: 0;
+}
+
+.infoValue {
+  flex: 1;
+  font-size: $font-size-body;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.description {
+  font-size: $font-size-body;
+  color: $color-text-primary;
+  line-height: 1.8;
+  margin-bottom: $spacing-sm;
+}
+
+.expandButton {
+  color: $color-primary;
+  font-size: $font-size-body;
+  margin-top: $spacing-sm;
+}
+
+.aiReviewCard {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  border: 2rpx solid rgba(99, 102, 241, 0.2);
+}
+
+.aiReviewContent {
+  font-size: $font-size-body;
+  color: $color-text-primary;
+  line-height: 1.8;
+}
+
+.aiReviewBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  background: $gradient-primary;
+  color: #ffffff;
+  padding: 4rpx $spacing-sm;
+  border-radius: $radius-xs;
+  font-size: $font-size-small;
+  margin-bottom: $spacing-sm;
+}
+
+.relatedSection {
+  padding: 0 $page-padding $spacing-xl;
+}
+
+.relatedTitle {
+  font-size: $font-size-subtitle;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.relatedMovies {
+  display: flex;
+  gap: $spacing-md;
+  overflow-x: auto;
+  padding-bottom: $spacing-sm;
+}
+
+.relatedMovieCard {
+  flex-shrink: 0;
+  width: 200rpx;
+}
+
+.relatedPoster {
+  width: 200rpx;
+  height: 280rpx;
+  border-radius: $radius-md;
+  margin-bottom: $spacing-sm;
+  background: $color-bg-hover;
+}
+
+.relatedTitle {
+  font-size: $font-size-body;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.relatedRating {
+  font-size: $font-size-caption;
+  color: $color-rating;
+  font-weight: $font-weight-medium;
+}
+
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: $color-bg-card;
+  padding: $spacing-md $page-padding;
+  padding-bottom: calc($spacing-md + constant(safe-area-inset-bottom));
+  padding-bottom: calc($spacing-md + env(safe-area-inset-bottom));
+  display: flex;
+  gap: $spacing-md;
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.08);
+  z-index: 100;
+}
+
+.actionButton {
+  flex: 1;
+  height: 88rpx;
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $spacing-sm;
+  font-size: $font-size-body;
+  font-weight: $font-weight-medium;
+  border: none;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}
+
+.primaryButton {
+  background: $gradient-primary;
+  color: #ffffff;
+}
+
+.secondaryButton {
+  background: $color-bg-hover;
+  color: $color-text-primary;
+}
+
+.buttonIcon {
+  font-size: 32rpx;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 120rpx;
+  color: $color-text-tertiary;
+}
+
+.error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120rpx;
+  color: $color-text-tertiary;
+}
+
+.errorIcon {
+  font-size: 120rpx;
+  margin-bottom: $spacing-lg;
+  opacity: 0.5;
+}
+
+.errorText {
+  font-size: $font-size-body;
+  margin-bottom: $spacing-md;
+}
+
+.retryButton {
+  padding: $spacing-sm $spacing-xl;
+  background: $color-primary;
+  color: #ffffff;
+  border-radius: $radius-button;
+  font-size: $font-size-body;
+}
+
+// AI影评相关样式
+.styleSelector {
+  margin-bottom: $spacing-md;
+}
+
+.styleLabel {
+  font-size: $font-size-body;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-sm;
+  display: block;
+}
+
+.styleList {
+  display: flex;
+  gap: $spacing-sm;
+  overflow-x: auto;
+  padding-bottom: $spacing-xs;
+  -webkit-overflow-scrolling: touch;
+}
+
+.styleItem {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: $spacing-xs;
+  padding: $spacing-sm $spacing-md;
+  background: $color-bg-hover;
+  border-radius: $radius-lg;
+  border: 2rpx solid transparent;
+  transition: all $transition-base;
+
+  &:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+
+  &.styleItemActive {
+    border-color: $color-primary;
+    background: rgba($color-primary, 0.1);
+  }
+}
+
+.styleName {
+  font-size: $font-size-small;
+  color: $color-text-primary;
+  white-space: nowrap;
+}
+
+.generateButton {
+  width: 100%;
+  height: 88rpx;
+  background: $gradient-primary;
+  color: #ffffff;
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-body;
+  font-weight: $font-weight-medium;
+  border: none;
+  margin-bottom: $spacing-lg;
+
+  &:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}
+
+.userReviewSection {
+  margin-bottom: $spacing-lg;
+}
+
+.userReviewLabel {
+  font-size: $font-size-body;
+  color: $color-text-secondary;
+  margin-bottom: $spacing-sm;
+  display: block;
+}
+
+.userReviewInput {
+  width: 100%;
+  padding: $spacing-md;
+  background: $color-bg-input;
+  border-radius: $radius-lg;
+  font-size: $font-size-body;
+  min-height: 120rpx;
+  margin-bottom: $spacing-md;
+  text-align: left;
+}
+
+.generateFromUserButton {
+  width: 100%;
+  height: 80rpx;
+  background: rgba($color-primary, 0.1);
+  color: $color-primary;
+  border-radius: $radius-button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-body;
+  font-weight: $font-weight-medium;
+  border: 2rpx solid $color-primary;
+
+  &:active {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}

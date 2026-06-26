@@ -1,0 +1,35 @@
+@use '../../styles/theme.scss' as *;
+@use '../../styles/variables.scss' as *;
+
+.tagItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 56rpx;
+  padding: 0 $spacing-lg;
+  border-radius: 28rpx;
+  background-color: $color-bg-hover;
+  border: 2rpx solid transparent;
+  transition: all $transition-base;
+  white-space: nowrap;
+
+  &:active {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+
+  &.selected {
+    background: $gradient-primary;
+    border-color: $color-primary;
+  }
+}
+
+.tagText {
+  font-size: $font-size-caption;
+  color: $color-text-secondary;
+
+  .selected & {
+    color: #ffffff;
+    font-weight: $font-weight-medium;
+  }
+}
